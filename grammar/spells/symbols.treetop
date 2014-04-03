@@ -1,0 +1,42 @@
+module Spells
+  grammar Symbols
+    include Punctuation
+
+    rule tap_symbol
+      opening_brace 'T' closing_brace
+    end
+
+    rule mana_symbol
+      mana_symbol_white /
+      mana_symbol_blue  /
+      mana_symbol_black /
+      mana_symbol_red   /
+      mana_symbol_green /
+      mana_symbol_colorless
+    end
+
+    rule mana_symbol_white
+      opening_brace 'W' closing_brace
+    end
+
+    rule mana_symbol_blue
+      opening_brace 'U' closing_brace
+    end
+
+    rule mana_symbol_black
+      opening_brace 'B' closing_brace
+    end
+
+    rule mana_symbol_red
+      opening_brace 'R' closing_brace
+    end
+
+    rule mana_symbol_green
+      opening_brace 'G' closing_brace
+    end
+
+    rule mana_symbol_colorless
+      opening_brace [1-9]+ closing_brace
+    end
+  end
+end

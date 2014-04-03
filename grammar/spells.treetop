@@ -1,0 +1,56 @@
+grammar Spells
+  include Spells::Punctuation
+  include Spells::Symbols
+
+  rule card_text
+    ability ( new_line ability )* <ParseNode>
+  end
+
+  rule ability
+    triggered_ability / activated_ability
+  end
+
+  rule triggered_ability
+    'Whenever' space words comma space effect <TriggeredAbility>
+  end
+
+  rule activated_ability
+    ( ability_word space dash space )? cost colon space effect <ActivatedAbility>
+  end
+
+  rule ability_word
+    'Channel' / 'Battalion'
+  end
+
+  rule cost
+    cost_part ( comma space cost_part )*
+  end
+
+  rule cost_part
+    mana_cost / tap_symbol / text_cost
+  end
+
+  rule mana_cost
+    mana_symbol+
+  end
+
+  rule tap_cost
+    tap_symbol
+  end
+
+  rule text_cost
+    words
+  end
+
+  rule effect
+    words dot ( space words dot )*
+  end
+
+  rule words
+    word ( space word )*
+  end
+
+  rule word
+    [A-Za-z1-9\-]+
+  end
+end

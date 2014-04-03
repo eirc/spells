@@ -1,0 +1,35 @@
+module Spells
+  grammar Punctuation
+    rule new_line
+      "\n"
+    end
+
+    rule comma
+      ','
+    end
+
+    rule colon
+      ':'
+    end
+
+    rule space
+      ' '
+    end
+
+    rule dot
+      '.'
+    end
+
+    rule opening_brace
+      '{'
+    end
+
+    rule closing_brace
+      '}'
+    end
+
+    rule dash
+      '-'
+    end
+  end
+end
