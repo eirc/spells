@@ -49,6 +49,13 @@ card.activated_abilities.map &:text_value
 # => []
 ```
 
+## Development
+
+This gem uses the [treetop](http://treetop.rubyforge.org) gem for declaring the syntax tree. Some resources on treetop:
+
+* http://treetop.rubyforge.org
+* http://thingsaaronmade.com/blog/a-quick-intro-to-writing-a-parser-using-treetop.html
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/spells/fork )
