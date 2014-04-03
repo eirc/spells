@@ -1,6 +1,8 @@
 # Spells
 
-TODO: Write a gem description
+Spells is a library for parsing the text on Magic the Gathering cards.
+
+Note that this is pre-pre-Alpha software and you should probably not really use it!
 
 ## Installation
 
@@ -18,7 +20,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Sample usage of the amazing features:
+
+Parsing activated abilities
+
+```ruby
+card = Spells::Card.new
+card.text = "{2}{R}, {T}: Ghost-Lit Raider deals 2 damage to target creature.
+Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature."
+card.abilities.map &:text_value
+# => ["{2}{R}, {T}: Ghost-Lit Raider deals 2 damage to target creature.", "Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature."]
+card.triggered_abilities.map &:text_value
+# => []
+card.activated_abilities.map &:text_value
+# => ["{2}{R}, {T}: Ghost-Lit Raider deals 2 damage to target creature.", "Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature."]
+```
+
+Parsing triggered abilities
+
+```ruby
+card = Spells::Card.new
+card.text = "Whenever Abomination blocks or becomes blocked by a green or white creature, destroy that creature at end of combat."
+card.abilities.map &:text_value
+# => ["Whenever Abomination blocks or becomes blocked by a green or white creature, destroy that creature at end of combat."]
+card.triggered_abilities.map &:text_value
+# => ["Whenever Abomination blocks or becomes blocked by a green or white creature, destroy that creature at end of combat."]
+card.activated_abilities.map &:text_value
+# => []
+```
 
 ## Contributing
 
