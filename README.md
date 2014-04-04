@@ -1,5 +1,11 @@
 # Spells
 
+[![Gem Version](https://badge.fury.io/rb/spells.png)](http://badge.fury.io/rb/spells)
+[![Build Status](https://travis-ci.org/eirc/spells.svg?branch=master)](https://travis-ci.org/eirc/spells)
+[![Code Climate](https://codeclimate.com/github/eirc/spells.png)](https://codeclimate.com/github/eirc/spells)
+[![Dependencies Status](https://gemnasium.com/eirc/spells.png)](https://gemnasium.com/eirc/spells)
+[![Coverage Status](https://coveralls.io/repos/eirc/spells/badge.png)](https://coveralls.io/r/eirc/spells)
+
 Spells is a library for parsing the text on Magic the Gathering cards.
 
 Note that this is pre-pre-Alpha software and you should probably not really use it!
