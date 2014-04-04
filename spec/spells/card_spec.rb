@@ -70,6 +70,16 @@ describe Spells::Card do
       expect(build(:card, text: abilities.join("\n")).triggered_abilities.map { |ability| ability.text_value }).to eq(abilities)
     end
 
+    it 'parses a triggered ability with "At"' do
+      abilities = ['At the beginning of your upkeep, you may put a feather counter on target creature.']
+      expect(build(:card, text: abilities.join("\n")).triggered_abilities.map { |ability| ability.text_value }).to eq(abilities)
+    end
+
+    it 'parses a triggered ability with "When"' do
+      abilities = ['When enchanted creature becomes the target of a spell or ability, exile that creature.']
+      expect(build(:card, text: abilities.join("\n")).triggered_abilities.map { |ability| ability.text_value }).to eq(abilities)
+    end
+
     it 'does not parse activated abilities as triggered' do
       abilities = ['{T}, Sacrifice a creature: Target player discards a card.',
                    '{2}{W}{B}, {T}: Target player discards a card.',

@@ -11,7 +11,15 @@ grammar Spells
   end
 
   rule triggered_ability
-    'Whenever' space words comma space effect <TriggeredAbility>
+    trigger_word space trigger_event comma space effect <TriggeredAbility>
+  end
+
+  rule trigger_word
+    'Whenever' / 'When' / 'At'
+  end
+
+  rule trigger_event
+    words
   end
 
   rule activated_ability
