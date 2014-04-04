@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Spells::VERSION
   spec.authors       = ['Eric Cohen']
   spec.email         = ['eirc.eirc@gmail.com']
-  spec.summary       = %q{Spells is a library for parsing the text on Magic the Gathering cards}
+  spec.summary       = %q{Spells is a library for parsing the text on Magic: The Gathering cards}
   spec.homepage      = 'http://github.com/eirc/spells'
   spec.license       = 'MIT'
 

@@ -6,7 +6,7 @@
 [![Dependencies Status](https://gemnasium.com/eirc/spells.png)](https://gemnasium.com/eirc/spells)
 [![Coverage Status](https://coveralls.io/repos/eirc/spells/badge.png)](https://coveralls.io/r/eirc/spells)
 
-Spells is a library for parsing the text on Magic the Gathering cards.
+Spells is a library for parsing the text on Magic: The Gathering cards.
 
 Note that this is pre-pre-Alpha software and you should probably not really use it!
 
