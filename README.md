@@ -60,6 +60,16 @@ This gem uses the [treetop](http://treetop.rubyforge.org) gem for declaring the 
 * http://treetop.rubyforge.org
 * http://thingsaaronmade.com/blog/a-quick-intro-to-writing-a-parser-using-treetop.html
 
+## Resources
+
+Other open source or general resources related to Magic: The Gathering
+
+* https://github.com/ancestral/Verse
+* https://github.com/Zannick/demystify
+* http://www.goblinopera.com/mathemagics
+* http://wololo.net/2009/08/12/parsing-cards
+* https://code.google.com/p/laterna-magica
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/spells/fork )
