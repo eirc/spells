@@ -20,8 +20,6 @@ Or install it yourself as:
 
 ## Usage
 
-Sample usage of the amazing features:
-
 Parsing activated abilities
 
 ```ruby
