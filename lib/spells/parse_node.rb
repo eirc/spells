@@ -4,6 +4,10 @@ module Spells
       ParseNode.nodes_of klass, self
     end
 
+    def to_s
+      text_value
+    end
+
     def self.nodes_of(klass, tree)
       return if tree.elements.nil?
 

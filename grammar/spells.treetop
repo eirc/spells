@@ -11,7 +11,7 @@ grammar Spells
   end
 
   rule triggered_ability
-    trigger_word space trigger_event comma space effect <TriggeredAbility>
+    ( ability_word space dash space )? trigger_word space trigger_event comma space effect <TriggeredAbility>
   end
 
   rule trigger_word
