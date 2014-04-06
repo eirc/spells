@@ -5,7 +5,7 @@ require 'yaml'
 #end
 
 def gatherer_sets
-  filename = File.expand_path("../../fixtures/gatherer/sets.yml", __FILE__)
+  filename = File.expand_path('../../fixtures/gatherer/sets.yml', __FILE__)
   YAML.load_file filename
 end
 

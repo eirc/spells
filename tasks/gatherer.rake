@@ -34,7 +34,7 @@ namespace :gatherer do
   end
 
   def sets_file
-    File.expand_path("../../spec/fixtures/gatherer/sets.yml", __FILE__)
+    File.expand_path('../../spec/fixtures/gatherer/sets.yml', __FILE__)
   end
 
   def set_file(set_name)

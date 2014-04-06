@@ -1,7 +1,7 @@
 require 'treetop'
 require 'singleton'
 
-require "spells/version"
+require 'spells/version'
 
 module Spells
   autoload :Parser,           'spells/parser'
