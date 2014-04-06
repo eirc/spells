@@ -10,7 +10,9 @@ module Spells
     end
 
     def parse(text)
-      @parser.parse text
+      result = @parser.parse text
+      raise ParseError.new("Failed to parse text '#{text}' at index #{@parser.index}") if result.nil?
+      result
     end
   end
 end

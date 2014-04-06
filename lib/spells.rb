@@ -11,4 +11,6 @@ module Spells
   autoload :Ability,          'spells/ability'
   autoload :ActivatedAbility, 'spells/activated_ability'
   autoload :TriggeredAbility, 'spells/triggered_ability'
+
+  autoload :ParseError,       'spells/errors'
 end
