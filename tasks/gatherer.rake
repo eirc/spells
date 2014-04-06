@@ -103,6 +103,8 @@ namespace :gatherer do
 
   def dump_master_sets
     require 'yaml'
+    require 'fileutils'
+    FileUtils.mkdir_p File.dirname(sets_file)
     File.open(sets_file, 'w') { |out| YAML.dump(gatherer_sets, out) }
   end
 

@@ -1,9 +1,5 @@
 require 'yaml'
 
-#def gatherer_card_fixtures
-#  @cards ||= YAML.load_file File.expand_path('../../fixtures/cards.yml', __FILE__)
-#end
-
 def gatherer_sets
   filename = File.expand_path('../../fixtures/gatherer/sets.yml', __FILE__)
   YAML.load_file filename

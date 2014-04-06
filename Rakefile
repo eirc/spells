@@ -2,10 +2,12 @@ require 'bundler/gem_tasks'
 require 'rspec/core/rake_task'
 
 namespace :spec do
-  RSpec::Core::RakeTask.new(:unit)
+  RSpec::Core::RakeTask.new(:unit) do |t|
+    t.pattern = FileList['spec/**/*_spec.rb'].exclude('spec/integration/**/*_spec.rb')
+  end
 
-  RSpec::Core::RakeTask.new(:integration) do |t|
-    t.rspec_opts = '--tag integration --format progress'
+  RSpec::Core::RakeTask.new(:integration => :gatherer) do |t|
+    t.pattern = 'spec/integration/**/*_spec.rb'
   end
 end
 task :spec => 'spec:unit'
