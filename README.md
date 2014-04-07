@@ -3,6 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/spells.png)](http://badge.fury.io/rb/spells)
 [![Build Status](https://travis-ci.org/eirc/spells.svg?branch=master)](https://travis-ci.org/eirc/spells)
 [![Code Climate](https://codeclimate.com/github/eirc/spells.png)](https://codeclimate.com/github/eirc/spells)
+[![PullReview stats](https://www.pullreview.com/github/eirc/spells/badges/master.svg?)](https://www.pullreview.com/github/eirc/spells/reviews/master)
 [![Dependencies Status](https://gemnasium.com/eirc/spells.png)](https://gemnasium.com/eirc/spells)
 [![Coverage Status](https://coveralls.io/repos/eirc/spells/badge.png)](https://coveralls.io/r/eirc/spells)
 
