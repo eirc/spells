@@ -59,7 +59,7 @@ describe Spells::Card do
           to be_parsed_as_activated_abilities ['{T}, Sacrifice a creature: Target player discards a card.']
     end
 
-    it 'parses an activated ability with an ability word', focus: true do
+    it 'parses an activated ability with an ability word' do
       expect('Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.').
           to be_parsed_as_activated_abilities ['Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
     end
