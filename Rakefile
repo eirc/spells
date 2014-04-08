@@ -8,6 +8,7 @@ namespace :spec do
 
   RSpec::Core::RakeTask.new(:integration => :gatherer) do |t|
     t.pattern = 'spec/integration/**/*_spec.rb'
+    t.rspec_opts = '--format progress'
   end
 end
 task :spec => 'spec:unit'
