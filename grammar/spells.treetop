@@ -7,11 +7,13 @@ grammar Spells
   end
 
   rule ability
+    keyword ( space ( cost space )? opening_parentheses ( triggered_ability / activated_ability ) closing_parentheses )? /
+    ( ability_word space dash space )? ( triggered_ability / activated_ability ) /
     triggered_ability / activated_ability
   end
 
   rule triggered_ability
-    ( ability_word space dash space )? trigger_word space trigger_event comma space effect <TriggeredAbility>
+    trigger_word space trigger_event comma space effect <TriggeredAbility>
   end
 
   rule trigger_word
@@ -19,15 +21,140 @@ grammar Spells
   end
 
   rule trigger_event
-    words
+    word ( space word )*
   end
 
   rule activated_ability
-    ( ability_word space dash space )? cost colon space effect <ActivatedAbility>
+    cost colon space effect <ActivatedAbility>
+  end
+
+  rule keyword
+    'Absorb'            /
+    'Affinity'          /
+    'Amplify'           /
+    'Annihilator'       /
+    'Aura swap'         /
+    'Banding'           /
+    'Battle cry'        /
+    'Bestow'            /
+    'Bloodthirst'       /
+    'Bushido'           /
+    'Buyback'           /
+    'Cascade'           /
+    'Champion'          /
+    'Changeling'        /
+    'Cipher'            /
+    'Conspire'          /
+    'Convoke'           /
+    'Cumulative upkeep' /
+    'Cycling'           /
+    'Deathtouch'        /
+    'Defender'          /
+    'Delve'             /
+    'Devour'            /
+    'Double strike'     /
+    'Dredge'            /
+    'Echo'              /
+    'Enchant'           /
+    'Entwine'           /
+    'Epic'              /
+    'Equip'             /
+    'Evergreen'         /
+    'Evoke'             /
+    'Evolve'            /
+    'Exalted'           /
+    'Extort'            /
+    'Fading'            /
+    'Fear'              /
+    'First strike'      /
+    'Flanking'          /
+    'Flash'             /
+    'Flashback'         /
+    'Flying'            /
+    'Forecast'          /
+    'Fortify'           /
+    'Frenzy'            /
+    'Fuse'              /
+    'Graft'             /
+    'Gravestorm'        /
+    'Haste'             /
+    'Haunt'             /
+    'Hexproof'          /
+    'Hideaway'          /
+    'Horsemanship'      /
+    'Indestructible'    /
+    'Infect'            /
+    'Intimidate'        /
+    'Kicker'            /
+    'Landwalk'          /
+    'Level up'          /
+    'Lifelink'          /
+    'Living weapon'     /
+    'Madness'           /
+    'Miracle'           /
+    'Modular'           /
+    'Morph'             /
+    'Ninjutsu'          /
+    'Offering'          /
+    'Overload'          /
+    'Persist'           /
+    'Phasing'           /
+    'Poisonous'         /
+    'Protection'        /
+    'Provoke'           /
+    'Prowl'             /
+    'Rampage'           /
+    'Reach'             /
+    'Rebound'           /
+    'Recover'           /
+    'Reinforce'         /
+    'Replicate'         /
+    'Retrace'           /
+    'Ripple'            /
+    'Scavenge'          /
+    'Shadow'            /
+    'Shroud'            /
+    'Soulbond'          /
+    'Soulshift'         /
+    'Splice'            /
+    'Split second'      /
+    'Storm'             /
+    'Sunburst'          /
+    'Suspend'           /
+    'Totem armor'       /
+    'Trample'           /
+    'Transfigure'       /
+    'Transmute'         /
+    'Tribute'           /
+    'Undying'           /
+    'Unearth'           /
+    'Unleash'           /
+    'Vanishing'         /
+    'Vigilance'         /
+    'Wither'
   end
 
   rule ability_word
-    'Channel' / 'Battalion'
+    'Battalion'      /
+    'Bloodrush'      /
+    'Channel'        /
+    'Chroma'         /
+    'Domain'         /
+    'Fateful hour'   /
+    'Grandeur'       /
+    'Hellbent'       /
+    'Heroic'         /
+    'Imprint'        /
+    'Inspired'       /
+    'Join forces'    /
+    'Kinship'        /
+    'Landfall'       /
+    'Metalcraft'     /
+    'Morbid'         /
+    'Radiance'       /
+    'Sweep'          /
+    'Tempting offer' /
+    'Threshold'
   end
 
   rule cost
@@ -47,18 +174,14 @@ grammar Spells
   end
 
   rule text_cost
-    words
-  end
-
-  rule effect
-    words dot ( space words dot )*
-  end
-
-  rule words
     word ( space word )*
   end
 
+  rule effect
+    word ( ( space / ( comma space ) / ( dot space ) ) word )* dot
+  end
+
   rule word
-    [A-Za-z1-9\-]+
+    [A-Za-z1-9\-\'\+\/]+
   end
 end

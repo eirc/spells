@@ -8,7 +8,7 @@ describe Spells::Card do
               'Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']).
           to be_parsed_as_abilities ['{T}, Sacrifice a creature: Target player discards a card.',
                                                '{2}{W}{B}, {T}: Target player discards a card.',
-                                               'Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
+                                               '{3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
     end
 
     it 'parses triggered abilities as abilities' do
@@ -23,7 +23,7 @@ describe Spells::Card do
               'Whenever Abomination blocks or becomes blocked by a green or white creature, destroy that creature at end of combat.']).
           to be_parsed_as_abilities ['{T}, Sacrifice a creature: Target player discards a card.',
                                                '{2}{W}{B}, {T}: Target player discards a card.',
-                                               'Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.',
+                                               '{3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.',
                                                'Whenever Abomination blocks or becomes blocked by a green or white creature, destroy that creature at end of combat.']
     end
   end
@@ -66,7 +66,12 @@ describe Spells::Card do
 
     it 'parses an activated ability with an ability word' do
       expect('Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.').
-          to be_parsed_as_activated_abilities ['Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
+          to be_parsed_as_activated_abilities ['{3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
+    end
+
+    it 'parses an activated ability with a keyword' do
+      expect(['Cycling {(u/b)} ({(u/b)}, Discard this card: Draw a card.)']).
+          to be_parsed_as_activated_abilities ['{(u/b)}, Discard this card: Draw a card.']
     end
 
     it 'parses multiple activated abilities' do
@@ -75,7 +80,7 @@ describe Spells::Card do
               'Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']).
           to be_parsed_as_activated_abilities ['{T}, Sacrifice a creature: Target player discards a card.',
                                                '{2}{W}{B}, {T}: Target player discards a card.',
-                                               'Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
+                                               '{3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
     end
 
     it 'does not parse triggered abilities as activated' do
@@ -90,7 +95,7 @@ describe Spells::Card do
               'Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']).
           to be_parsed_as_activated_abilities ['{T}, Sacrifice a creature: Target player discards a card.',
                                                '{2}{W}{B}, {T}: Target player discards a card.',
-                                               'Channel - {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
+                                               '{3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.']
     end
   end
 
@@ -108,6 +113,11 @@ describe Spells::Card do
     it 'parses a triggered ability with "When"' do
       expect('When enchanted creature becomes the target of a spell or ability, exile that creature.').
           to be_parsed_as_triggered_abilities ['When enchanted creature becomes the target of a spell or ability, exile that creature.']
+    end
+
+    it 'parses a triggered ability with a keyword' do
+      expect('Exalted (Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.)').
+          to be_parsed_as_triggered_abilities ['Whenever a creature you control attacks alone, that creature gets +1/+1 until end of turn.']
     end
 
     it 'does not parse activated abilities as triggered' do

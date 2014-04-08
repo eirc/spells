@@ -28,6 +28,18 @@ module Spells
       '}'
     end
 
+    rule opening_parentheses
+      '('
+    end
+
+    rule closing_parentheses
+      ')'
+    end
+
+    rule slash
+      '/'
+    end
+
     rule dash
       '-'
     end
