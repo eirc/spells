@@ -7,11 +7,21 @@ module Spells
     end
 
     rule mana_symbol
-      mana_symbol_white /
-      mana_symbol_blue  /
-      mana_symbol_black /
-      mana_symbol_red   /
-      mana_symbol_green /
+      mana_symbol_white              /
+      mana_symbol_blue               /
+      mana_symbol_black              /
+      mana_symbol_red                /
+      mana_symbol_green              /
+      mana_symbol_white_blue_hybrid  /
+      mana_symbol_white_black_hybrid /
+      mana_symbol_white_red_hybrid   /
+      mana_symbol_white_green_hybrid /
+      mana_symbol_blue_black_hybrid  /
+      mana_symbol_blue_red_hybrid    /
+      mana_symbol_blue_green_hybrid  /
+      mana_symbol_black_red_hybrid   /
+      mana_symbol_black_green_hybrid /
+      mana_symbol_red_green_hybrid   /
       mana_symbol_colorless
     end
 
@@ -33,6 +43,46 @@ module Spells
 
     rule mana_symbol_green
       opening_brace 'G' closing_brace
+    end
+
+    rule mana_symbol_white_blue_hybrid
+      opening_brace '(w/u)' closing_brace
+    end
+
+    rule mana_symbol_white_black_hybrid
+      opening_brace '(w/b)' closing_brace
+    end
+
+    rule mana_symbol_white_red_hybrid
+      opening_brace '(w/r)' closing_brace
+    end
+
+    rule mana_symbol_white_green_hybrid
+      opening_brace '(w/g)' closing_brace
+    end
+
+    rule mana_symbol_blue_black_hybrid
+      opening_brace '(u/b)' closing_brace
+    end
+
+    rule mana_symbol_blue_red_hybrid
+      opening_brace '(u/r)' closing_brace
+    end
+
+    rule mana_symbol_blue_green_hybrid
+      opening_brace '(u/g)' closing_brace
+    end
+
+    rule mana_symbol_black_red_hybrid
+      opening_brace '(b/r)' closing_brace
+    end
+
+    rule mana_symbol_black_green_hybrid
+      opening_brace '(b/g)' closing_brace
+    end
+
+    rule mana_symbol_red_green_hybrid
+      opening_brace '(r/g)' closing_brace
     end
 
     rule mana_symbol_colorless

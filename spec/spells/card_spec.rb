@@ -34,9 +34,14 @@ describe Spells::Card do
           to be_parsed_as_activated_abilities ['{B}: Target player discards a card.']
     end
 
+    it 'parses an activated ability with a hybrid mana cost' do
+      expect('{(u/b)}: Target player discards a card.').
+          to be_parsed_as_activated_abilities ['{(u/b)}: Target player discards a card.']
+    end
+
     it 'parses an activated ability with a complex mana cost' do
-      expect('{2}{W}{B}: Target player discards a card.').
-          to be_parsed_as_activated_abilities ['{2}{W}{B}: Target player discards a card.']
+      expect('{2}{W}{B}{(u/b)}: Target player discards a card.').
+          to be_parsed_as_activated_abilities ['{2}{W}{B}{(u/b)}: Target player discards a card.']
     end
 
     it 'parses an activated ability with a tap cost' do
