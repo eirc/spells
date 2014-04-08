@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/eirc/spells.png?label=ready&title=Ready)](https://waffle.io/eirc/spells)
 # Spells
 
 [![Gem Version](https://badge.fury.io/rb/spells.png)](http://badge.fury.io/rb/spells)
