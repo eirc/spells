@@ -8,4 +8,4 @@ RSpec.configure do |config|
   end
 end
 
-Dir[File.expand_path('../../factories/', __FILE__) + '/**/*.rb'].each {|f| require f }
+Dir[File.expand_path('../../factories/', __FILE__) + '/**/*.rb'].each { |f| require f }
