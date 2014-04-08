@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :card, class: Spells::Card do
-    name ''
+    name 'Sample card'
     text ''
   end
 end
